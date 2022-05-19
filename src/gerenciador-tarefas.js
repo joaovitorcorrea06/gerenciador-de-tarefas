@@ -26,13 +26,13 @@ function GerenciadorTarefas() {
           <Link to='/cadastro'>Cadastro</Link>
         </li>
         <li>
-          <Link to='/atualizar'>Atualizar</Link>
+          <Link to='/atualizar/:id'>Atualizar</Link>
         </li>
       </ul>
       <Routes>
         <Route exact path="/" element={<ListarTarefas/>} />
         <Route path="/cadastro" element={<CadastrarTarefa/>}/>
-        <Route path="/atualizar"element={<AtualizarTarefa/>}/>
+        <Route path="/atualizar/:id" element={<AtualizarTarefa/>}/>
       </Routes>
     </Router>
   );
