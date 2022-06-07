@@ -2,7 +2,8 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEdit } from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom";
-import { ConcluirTarefa } from './concluir-tarefa'
+import ConcluirTarefa  from './concluir-tarefa'
+import RemoverTarefas from './remover-tarefa';
 
 function ItensListaTarefas(props) {
 
@@ -19,12 +20,20 @@ function ItensListaTarefas(props) {
                      {tarefa.nome} 
                 </td>
                 <td className='text-right'>
+                <ConcluirTarefa 
+                    tarefa={tarefa}
+                    recarregarTarefas={props.recarregarTarefas}
+                    className={tarefa.concluida ? 'hidden' : null}/>
+                    &nbsp;
                     <Link 
                         to={'/atualizar/'+ tarefa.id} 
                         className={tarefa.concluida ? 'hidden' : 'btn btn-warning btn-sm'}>    
                         <FontAwesomeIcon icon={faEdit} />
                     </Link>
-                    
+                    &nbsp;
+                    <RemoverTarefas
+                    tarefa={tarefa}
+                    recarregarTarefas={props.recarregarTarefas}/>                    
                 </td>
             </tr>    
         )

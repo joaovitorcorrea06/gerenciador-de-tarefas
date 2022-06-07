@@ -66,7 +66,7 @@ function ConcluirTarefa(props){
 ConcluirTarefa.propTypes = {
     tarefa: PropTypes.object.isRequired,
     recarregarTarefas: PropTypes.func.isRequired,
-    className: PropTypes.string.isRequired
+    className: PropTypes.string
 }
 
 export default ConcluirTarefa;
